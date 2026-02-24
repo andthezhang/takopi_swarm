@@ -1,5 +1,11 @@
 # changelog
 
+## v0.22.2 (2026-02-24)
+
+### fixes
+
+- prevent Telegram `400 Bad Request` failures on local/relative markdown links by dropping invalid `text_link` entities [#214](https://github.com/banteg/takopi/pull/214)
+
 ## v0.22.1 (2026-02-10)
 
 ### fixes
