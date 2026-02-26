@@ -1,11 +1,11 @@
 ---
-name: takopiswarm
-description: Use takopiswarm CLI to create/reuse worker topics and send messages or task prompts to other Takopi agents.
+name: agent-swarm-takopi
+description: Agent swarm orchestration for coding agents and subagents: create worker topics, send agent-to-agent coordination messages, and trigger runnable tasks via Takopi CLI.
 ---
 
-# takopiswarm
+# agent-swarm-takopi
 
-Use this skill when one agent needs to coordinate other agents in Telegram topics.
+Use this skill when one coding agent needs to coordinate other agents/subagents in Telegram topics.
 
 ## Quick model
 
