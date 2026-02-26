@@ -1,0 +1,13 @@
+dist/
+.venv/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.mutmut-cache/
+mutants/
+.worktrees/
+research/
+_site/
+docs/reference/changelog.md

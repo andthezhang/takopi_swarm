@@ -1,0 +1,84 @@
+[project]
+name = "takopi"
+authors = [{name = "banteg"}]
+version = "0.22.2"
+description = "Telegram bridge for Codex, Claude Code, and other agent CLIs."
+readme = "readme.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.14"
+dependencies = [
+  "anyio>=4.12.0",
+  "httpx>=0.28.1",
+  "markdown-it-py",
+  "msgspec>=0.20.0",
+  "openai>=2.15.0",
+  "pydantic>=2.12.5",
+  "pydantic-settings>=2.12.0",
+  "questionary>=2.1.1",
+  "rich>=14.2.0",
+  "structlog>=25.5.0",
+  "sulguk>=0.11.1",
+  "tomli-w>=1.2.0",
+  "typer>=0.21.0",
+  "watchfiles>=0.21.0",
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/banteg/takopi"
+Documentation = "https://takopi.dev/"
+Repository = "https://github.com/banteg/takopi"
+Issues = "https://github.com/banteg/takopi/issues"
+
+[project.scripts]
+takopi = "takopi.cli:main"
+
+[project.entry-points."takopi.engine_backends"]
+codex = "takopi.runners.codex:BACKEND"
+claude = "takopi.runners.claude:BACKEND"
+opencode = "takopi.runners.opencode:BACKEND"
+pi = "takopi.runners.pi:BACKEND"
+
+[project.entry-points."takopi.transport_backends"]
+telegram = "takopi.telegram.backend:BACKEND"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mutmut>=3.4.0",
+    "pytest>=9.0.2",
+    "pytest-anyio>=0.0.0",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.10",
+    "ty>=0.0.8",
+]
+docs = [
+    "mkdocstrings-python>=2.0.1",
+    "zensical>=0.0.15",
+]
+
+[tool.pytest.ini_options]
+addopts = ["--cov=takopi", "--cov-branch", "--cov-report=term-missing", "--cov-fail-under=81"]
+testpaths = ["tests"]
+
+[tool.mutmut]
+paths_to_mutate = ["src/takopi"]
+tests_dir = ["tests"]
+pytest_add_cli_args = ["-q", "--no-cov"]
+do_not_mutate = ["src/takopi/cli/*"]
+
+[tool.ruff.lint]
+extend-select = ["B", "BLE001", "C4", "PERF", "RUF043", "S110", "SIM", "UP"]
+
+[tool.ty.src]
+include = ["src", "tests"]
+exclude = ["scripts"]

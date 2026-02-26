@@ -1,0 +1,177 @@
+[project]
+site_name = "takopi"
+site_description = "Run coding agents on your computer, control them via Telegram. Send tasks from anywhere, stream progress live, pick up where you left off at the terminal."
+site_author = "banteg"
+site_url = "https://takopi.dev/"
+repo_url = "https://github.com/banteg/takopi"
+repo_name = "banteg/takopi"
+edit_uri = "edit/master/docs/"
+docs_dir = "docs"
+site_dir = "_site"
+extra_css = ["stylesheets/admonitions.css", "stylesheets/workflow-preview.css", "stylesheets/hero-chat.css"]
+extra_javascript = ["javascripts/hero-chat.js"]
+
+nav = [
+  { "Home" = "index.md" },
+  { "Tutorials" = [
+    { "Overview" = "tutorials/index.md" },
+    { "Install" = "tutorials/install.md" },
+    { "First run" = "tutorials/first-run.md" },
+    { "Projects & branches" = "tutorials/projects-and-branches.md" },
+    { "Multi-engine" = "tutorials/multi-engine.md" },
+  ] },
+  { "How-to" = [
+    { "Overview" = "how-to/index.md" },
+    { "Switch engines" = "how-to/switch-engines.md" },
+    { "Projects" = "how-to/projects.md" },
+    { "Worktrees" = "how-to/worktrees.md" },
+    { "Route by chat" = "how-to/route-by-chat.md" },
+    { "Topics" = "how-to/topics.md" },
+    { "Voice notes" = "how-to/voice-notes.md" },
+    { "File transfer" = "how-to/file-transfer.md" },
+    { "Schedule tasks" = "how-to/schedule-tasks.md" },
+    { "Troubleshooting" = "how-to/troubleshooting.md" },
+    { "Write a plugin" = "how-to/write-a-plugin.md" },
+    { "Add a runner" = "how-to/add-a-runner.md" },
+    { "Dev setup" = "how-to/dev-setup.md" },
+  ] },
+  { "Reference" = [
+    { "Overview" = "reference/index.md" },
+    { "Commands & directives" = "reference/commands-and-directives.md" },
+    { "Configuration" = "reference/config.md" },
+    { "Environment variables" = "reference/env-vars.md" },
+    { "Changelog" = "reference/changelog.md" },
+    { "Specification" = "reference/specification.md" },
+    { "Plugin API" = "reference/plugin-api.md" },
+    { "Plugins" = "reference/plugins.md" },
+    { "Context resolution" = "reference/context-resolution.md" },
+    { "Telegram transport" = "reference/transports/telegram.md" },
+    { "Runners" = [
+      { "Overview" = "reference/runners/index.md" },
+      { "Claude" = [
+        { "Runner" = "reference/runners/claude/runner.md" },
+        { "Stream JSON cheatsheet" = "reference/runners/claude/stream-json-cheatsheet.md" },
+        { "Takopi events" = "reference/runners/claude/takopi-events.md" },
+      ] },
+      { "Codex" = [
+        { "Exec JSON cheatsheet" = "reference/runners/codex/exec-json-cheatsheet.md" },
+        { "Takopi events" = "reference/runners/codex/takopi-events.md" },
+      ] },
+      { "OpenCode" = [
+        { "Runner" = "reference/runners/opencode/runner.md" },
+        { "Stream JSON cheatsheet" = "reference/runners/opencode/stream-json-cheatsheet.md" },
+        { "Takopi events" = "reference/runners/opencode/takopi-events.md" },
+      ] },
+      { "Pi" = [
+        { "Runner" = "reference/runners/pi/runner.md" },
+        { "Stream JSON cheatsheet" = "reference/runners/pi/stream-json-cheatsheet.md" },
+        { "Takopi events" = "reference/runners/pi/takopi-events.md" },
+      ] },
+    ] },
+    { "For agents" = [
+      { "Agent entrypoint" = "reference/agents/index.md" },
+      { "Repo map" = "reference/agents/repo-map.md" },
+      { "Invariants" = "reference/agents/invariants.md" },
+    ] },
+  ] },
+  { "Explanation" = [
+    { "Overview" = "explanation/index.md" },
+    { "Architecture" = "explanation/architecture.md" },
+    { "Routing & sessions" = "explanation/routing-and-sessions.md" },
+    { "Plugin system" = "explanation/plugin-system.md" },
+    { "Module map" = "explanation/module-map.md" },
+  ] },
+]
+
+[project.extra]
+generator = false
+
+[[project.extra.social]]
+icon = "fontawesome/brands/x-twitter"
+link = "https://x.com/banteg"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/telegram"
+link = "https://t.me/+qBtYAMZLW_JkYWEy"
+
+[project.theme]
+language = "en"
+logo = "assets/logo.svg"
+favicon = "assets/favicon.svg"
+custom_dir = "docs/overrides"
+font.text = "Nunito"
+font.code = "Fira Code"
+features = [
+  "navigation.sections",
+  "navigation.instant",
+  "navigation.tracking",
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.expand",
+  "navigation.footer",
+  "toc.follow",
+  "content.code.copy",
+  "content.action.edit",
+  "content.action.view",
+  "content.tabs.link",
+]
+
+[project.theme.icon]
+repo = "fontawesome/brands/github"
+
+[project.theme.icon.admonition]
+question = "fontawesome/solid/paper-plane"
+info = "takopi/takopi"
+user = "lucide/user-round"
+takopi = "takopi/takopi"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "pink"
+accent = "teal"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "pink"
+accent = "teal"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.tables]
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+options.custom_icons = ["docs/overrides/.icons"]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+show_source = false
